@@ -107,28 +107,29 @@ Vous n'avez pas besoin d'avoir ajouté les profils CMake pour pouvoir effectuer 
 
 #### ORDRES DE CONTRÔLE D'ACTION
 
-|   Ordres  |                       Actions                      | Arguments                 |
-|:---------:|:--------------------------------------------------:|:--------------------------|
-|    XLm    |Envoie le XL-430 à un α en °                        |id XL / α                  |
-|    XLs    |Modifie la vitesse d'un XL-430                      |id XL / speed              |
-|    posBras|Récupère les angles (en °) d'un bras                		 |side(left/right)			 |
+|   Ordres      |                       Actions                      | Arguments                 |
+|:-------------:|:--------------------------------------------------:|:--------------------------|
+|    XLm        |Envoie le XL-430 à un α en °                        |id XL / α                  |
+|    XLs        |Modifie la vitesse d'un XL-430                      |id XL / speed              |
+|    posBras    |Récupère les angles (en °) d'un bras                |side(left/right)			     |
 |	brasToutDroit	|Envoie le bras à la position "tout droit"           |side(left/right)           |
 |    dist   		|Envoie le bras à la position "distributeur"         |side(left/right)           |
 |   grnd    		|Envoie le bras à la position "sol"                  |side(left/right)           |
 |   stock   		|Envoie le bras à la position "ascenceur"            |side(left/right)           |
 |    acc    		|Envoie le bras à la position "accélérateur"         |side(left/right)           |
-|    posinter 		|Envoie le bras à la position "intermediaire"        |side(left/right)           |
+|    posinter   |Envoie le bras à la position "intermediaire"        |side(left/right)           |
 |     up    		|Monte l'ascenceur de la hauteur d'un palet          |side(left/right)           |
 |    down   		|Descend l'ascenseur de la hauteur d'un palet        |side(left/right)           |
 |    suck   		|Active la pompe                                     |side(left/right)           |
 |  unsuck   		|Désactive la pompe                                  |side(left/right)           |
+|    valve   		|Active ou désactive l'électrovanne                  |side(right/other)/(on/other)|
 |  valveon  		|Active l'électrovanne                               |side(left/right)           |
 |  valveoff 		|Désactive l'électrovanne                            |side(left/right)           |
-|   gold    |Envoie le bras à la position "goldonium"            |      /                    |
-|   bal     |Envoie le bras à la position "balance"              |side(left/right)           |
-|   elec    |Démarre l'électron                                  |      /                    |
-| torqueBras|Donne la couleur du palet pris (selon le couple)    |side(left/right) / position|
-|  torqueXL |Donne le couple d'un XL                             |id XL                      |
+|   gold        |Envoie le bras à la position "goldonium"            |      /                    |
+|   bal         |Envoie le bras à la position "balance"              |side(left/right)           |
+|   elec        |Démarre l'électron                                  |      /                    |
+| torqueBras    |Donne la couleur du palet pris (selon le couple)    |side(left/right) / position|
+|  torqueXL     |Donne le couple d'un XL                             |id XL                      |
 
 
 
