@@ -24,9 +24,9 @@ Pour CLion, si vous voulez profiter de la gestion automatique des `#if defined()
  - En dessous de "Profiles" il y a une liste avec seulement `Debug` dedans. Appuyez deux fois sur le plus.
  - Vous devez maintenant avoir une liste avec `Debug`, `Main` et `Slave`. Vous pouvez supprimer `Debug` si vous le voulez.
  - Dans l'éditeur, là où vous choisissez de de build ou d'upload, vous pouvez maintenant sélectionner `Main` ou `Slave` !
- 
+
 Vous aurez à répéter l'ajout des profils à chaque fois que vous ferez un `pio init [...]`.
- 
+
 ## UTILISATION
 
 Afin de fusionner les branches des deux robots et d'éviter les divergences, un système à base de define et de `#if defined` \
@@ -36,9 +36,9 @@ a été mit en place. Cela change légèrement la façon dont est géré le buil
    - L'utilisation d'un environnement platformio "leurre" pour éviter la détection de define automatique de platformio implique que le leurre ne soit pas compilable. Ces commandes tenteront de le compiler/uploader et échoueront car de nombreuses variables et fonctions ne seront pas définies.
  - Utiliser les cibles `INTECH_[X]_[ROBOT]` en fonction de si vous voulez build/upload pour le principal (MAIN) ou le secondaire (SLAVE)
    - La cible `INTECH_BUILD_BOTH` permet de compiler pour les deux robots en même temps.
-   
+
 Vous n'avez pas besoin d'avoir ajouté les profils CMake pour pouvoir effectuer ces actions.
- 
+
 ## TODO
 
 - [x] Compléter le nouveau MCS
@@ -54,7 +54,7 @@ Vous n'avez pas besoin d'avoir ajouté les profils CMake pour pouvoir effectuer 
 #### ORDRES GENERAUX
 
 |        Ordres         |                           Actions                         |
-|:---------------------:|:---------------------------------------------------------:|                  
+|:---------------------:|:---------------------------------------------------------:|
 |         ping          |                         Ping le LL                        |
 |          j            |           Active l'attente de l'activation du jumper      |
 |         sus           |        Switch les US ou choisit leur état (on/off)        |
@@ -98,11 +98,11 @@ Vous n'avez pas besoin d'avoir ajouté les profils CMake pour pouvoir effectuer 
 |         dh            |                     Désactive le hook                     |
 
 ### Ordres pour les capteurs
-|   Ordres  |                       Actions                                          			| Arguments      				|
+|   Ordres  |                       Actions                                                     | Arguments                     |
 |:---------:|:---------------------------------------------------------------------------------:|:------------------------------|
-|lectureSICK|Renvoie les 6 distances lues par les SICK (dans le sens trigo)          			|N/A             				|
-|testSICK	|Renvoie la valeur d'un seul capteur SICK								 			|indice du capteur             	|
-|rangeSICK	|Configure la fenêtre de détection d'un SICK (pour que le LL connaisse les valeurs)	|indice, min, max	            |
+|lectureSICK|Renvoie les 6 distances lues par les SICK (dans le sens trigo)                     |N/A                            |
+|testSICK   |Renvoie la valeur d'un seul capteur SICK                                           |indice du capteur              |
+|rangeSICK  |Configure la fenêtre de détection d'un SICK (pour que le LL connaisse les valeurs) |indice, min, max               |
 
 
 #### ORDRES DE CONTRÔLE D'ACTION
@@ -111,27 +111,25 @@ Vous n'avez pas besoin d'avoir ajouté les profils CMake pour pouvoir effectuer 
 |:-------------:|:--------------------------------------------------:|:--------------------------|
 |    XLm        |Envoie le XL-430 à un α en °                        |id XL / α                  |
 |    XLs        |Modifie la vitesse d'un XL-430                      |id XL / speed              |
-|    posBras    |Récupère les angles (en °) d'un bras                |side(left/right)			     |
-|	brasToutDroit	|Envoie le bras à la position "tout droit"           |side(left/right)           |
-|    dist   		|Envoie le bras à la position "distributeur"         |side(left/right)           |
-|   grnd    		|Envoie le bras à la position "sol"                  |side(left/right)           |
-|   stock   		|Envoie le bras à la position "ascenceur"            |side(left/right)           |
-|    acc    		|Envoie le bras à la position "accélérateur"         |side(left/right)           |
+|    posBras    |Récupère les angles (en °) d'un bras                |side(left/right)           |
+|  brasToutDroit|Envoie le bras à la position "tout droit"           |side(left/right)           |
+|    dist       |Envoie le bras à la position "distributeur"         |side(left/right)           |
+|   grnd        |Envoie le bras à la position "sol"                  |side(left/right)           |
+|   stock       |Envoie le bras à la position "ascenceur"            |side(left/right)           |
+|    acc        |Envoie le bras à la position "accélérateur"         |side(left/right)           |
 |    posinter   |Envoie le bras à la position "intermediaire"        |side(left/right)           |
-|     up    		|Monte l'ascenceur de la hauteur d'un palet          |side(left/right)           |
-|    down   		|Descend l'ascenseur de la hauteur d'un palet        |side(left/right)           |
-|    suck   		|Active la pompe                                     |side(left/right)           |
-|  unsuck   		|Désactive la pompe                                  |side(left/right)           |
-|    valve   		|Active ou désactive l'électrovanne                  |side(right/other)/(on/other)|
-|  valveon  		|Active l'électrovanne                               |side(left/right)           |
-|  valveoff 		|Désactive l'électrovanne                            |side(left/right)           |
+|     up        |Monte l'ascenceur de la hauteur d'un palet          |side(left/right)           |
+|    down       |Descend l'ascenseur de la hauteur d'un palet        |side(left/right)           |
+|    suck       |Active la pompe                                     |side(left/right)           |
+|  unsuck       |Désactive la pompe                                  |side(left/right)           |
+|    valve      |Active ou désactive l'électrovanne                  |side(right/other)/(on/other)|
+|  valveon      |Active l'électrovanne                               |side(left/right)           |
+|  valveoff     |Désactive l'électrovanne                            |side(left/right)           |
 |   gold        |Envoie le bras à la position "goldonium"            |      /                    |
 |   bal         |Envoie le bras à la position "balance"              |side(left/right)           |
 |   elec        |Démarre l'électron                                  |      /                    |
 | torqueBras    |Donne la couleur du palet pris (selon le couple)    |side(left/right) / position|
 |  torqueXL     |Donne le couple d'un XL                             |id XL                      |
-
-
 
 
 ### ORDRES SPECIFIQUES LL
